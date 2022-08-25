@@ -1,6 +1,6 @@
 <template>
   <div class="AllPosts">
-    <h1>all posts page</h1>
+    <h1>user page</h1>
   </div>
 </template>
 

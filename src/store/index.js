@@ -7,6 +7,7 @@ export default createStore({
     posts:[],
     messages:[],
     groupMessages:[],
+    name:'Terra Scientia'
   },
   getters: {
   },

@@ -1,6 +1,7 @@
 <template>
   <div class="AllPosts">
-    <h1>all posts page</h1>
+    <h1>personal messages</h1>
+    <p>no sliding</p>
   </div>
 </template>
 

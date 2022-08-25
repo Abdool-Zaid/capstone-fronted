@@ -50,7 +50,7 @@ const routes = [
   {
     path: '/GroupMembers',
     name: 'GroupMembers',
-    component: () => import('../views/GroupView.vue')
+    component: () => import('../views/GroupMembersView.vue')
   },
   {
     path: '/GroupPosts',
