@@ -1,6 +1,6 @@
 <template>
   <div class="AllPosts">
-    <h1>group posts posts </h1>
+    <h1>group posts</h1>
   </div>
 </template>
 

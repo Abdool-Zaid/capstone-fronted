@@ -21,8 +21,3 @@
     name: 'NAvBAr'
   }
 </script>
-<style>
-  /* #nav{
-
-  }  */
-</style>
