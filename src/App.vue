@@ -7,9 +7,11 @@
     <div class="carousel-item">
       <home-view/>
     </div>
+    <!--  -->
     <div class="carousel-item">
-
+<login/>
     </div>
+    <!--  -->
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -25,12 +27,13 @@
 // import nav from '@/components/nav.vue'
 <script>
   import HomeView from '../src/views/HomeView.vue'
-  import nav from '../src/components/nav.vue'
-  
+  import nav from '../src/views/navView.vue'
+  import login from "../src/views/AboutView.vue"
   export default {
     components: {
       HomeView,
-      nav
+      nav,
+      login
     }
   }
   </script>
@@ -64,8 +67,8 @@ nav a.router-link-exact-active {
   color: #42b983;
 }
 button{
-  position: fixed;
-top: 100px;
+  position: fixed  !important;
+top: 100px !important;
 }
 span{
 background-color: blue;
