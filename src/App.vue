@@ -1,21 +1,40 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/register">register</router-link>|
-    <router-link to="/user">user</router-link>|
-    <router-link to="/friendslist">friendslist</router-link>|
-    <router-link to="/messages">messages</router-link>|
-    <router-link to="/groups">groups</router-link>|
-    <router-link to="/post">post</router-link>|
-    <router-link to="/groupMessages">groupMessages</router-link>|
-    <router-link to="/GroupMembers">GroupMembers</router-link>|
-    <router-link to="/GroupPosts">GroupPosts</router-link>|
-    <router-link to="/Posts">Posts</router-link>|
-    <router-link to="/login">loign</router-link>|
-  </nav>
-  <router-view/>
-</template>
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+    <nav></nav>
+    </div>
+    <div class="carousel-item">
+      <home-view/>
+    </div>
+    <div class="carousel-item">
 
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+</template>
+// import home from '@/views/HomeView.vue'
+// import nav from '@/components/nav.vue'
+<script>
+  import HomeView from '../src/views/HomeView.vue'
+  import nav from '../src/components/nav.vue'
+  
+  export default {
+    components: {
+      HomeView,
+      nav
+    }
+  }
+  </script>
+  
 <style>
 *{
   margin: 0;
@@ -43,5 +62,13 @@ nav a {
 
 nav a.router-link-exact-active {
   color: #42b983;
+}
+button{
+  position: fixed;
+top: 100px;
+}
+span{
+background-color: blue;
+border-radius: 50%;
 }
 </style>
