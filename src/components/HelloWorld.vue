@@ -24,7 +24,7 @@ img{
   aspect-ratio: 1;
 }
 div{
-  background-color: green;
+  /* background-color: green; */
   height: 200vh;
 }
 </style>

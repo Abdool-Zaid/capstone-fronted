@@ -1,8 +1,11 @@
 <template>
+  <!-- name  -->
+  <!--  nav-->
+  <!-- <NAvBAr/> -->
+  <!--  nav-->
   <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-    <nav></nav>
     </div>
     <div class="carousel-item">
       <home-view/>
@@ -13,13 +16,11 @@
     </div>
     <!--  -->
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
+  <button class="carousel-control-prev nav-bbutton" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <img src="https://raw.githubusercontent.com/Abdool-Zaid/capstone-fronted/main/src/assets/view.jpg" alt="">
   </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
+  <button class="carousel-control-next nav-bbutton" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <img src="https://raw.githubusercontent.com/Abdool-Zaid/capstone-fronted/main/src/assets/view.jpg" alt="">
   </button>
 </div>
 </template>
@@ -27,12 +28,12 @@
 // import nav from '@/components/nav.vue'
 <script>
   import HomeView from '../src/views/HomeView.vue'
-  import nav from '../src/views/navView.vue'
+  import NAvBAr from '../src/views/navView.vue'
   import login from "../src/views/AboutView.vue"
   export default {
     components: {
       HomeView,
-      nav,
+      NAvBAr,
       login
     }
   }
@@ -66,7 +67,7 @@ nav a {
 nav a.router-link-exact-active {
   color: #42b983;
 }
-button{
+.nav-bbutton{
   position: fixed  !important;
 top: 100px !important;
 }

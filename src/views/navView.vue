@@ -1,7 +1,6 @@
 <template>
 <div id="nav">
 
-  <h1>navbar</h1> 
   <router-link to="/">Home</router-link> |
   <router-link to="/register">register</router-link>|
   <router-link to="/user">user</router-link>|
@@ -19,13 +18,11 @@
 </template>
 <script>
   export default{
-    name: 'nav'
+    name: 'NAvBAr'
   }
 </script>
 <style>
-  #nav{
-    height: 200vh;
+  /* #nav{
 
-    background-color: blueviolet;
-  } 
+  }  */
 </style>
