@@ -1,6 +1,8 @@
 <template>
   <div class="home">
+    <!-- <h1>aaaaaaaaa</h1> -->
     <HelloWorld msg="Welcome to the land of knowledge"/>
+
   </div>
 </template>
 

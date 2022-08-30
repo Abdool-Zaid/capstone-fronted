@@ -1,14 +1,16 @@
 <template>
   <!-- name  -->
+
   <!--  nav-->
-  <!-- <NAvBAr/> -->
+  <NAvBAr/>
   <!--  nav-->
-  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="false">
   <div class="carousel-inner">
     <div class="carousel-item active">
     </div>
     <div class="carousel-item">
-      <home-view/>
+  <!-- <router-view/> -->
+
     </div>
     <!--  -->
     <div class="carousel-item">
@@ -102,7 +104,7 @@ import GroupPostsView from './views/GroupPostsView.vue'
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #0c3e50;
 }
 
 nav {

@@ -25,6 +25,5 @@ img{
 }
 div{
   /* background-color: green; */
-  height: 200vh;
 }
 </style>
