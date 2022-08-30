@@ -124,11 +124,10 @@ nav a.router-link-exact-active {
 }
 .nav-bbutton > img {
   border-radius: 50% ;
-  transform: scaleX(-1);
   transform: scale(0.25);
 }
 .carousel-control-next >img {
-  transform: scaleX(1);
+  transform: scaleX(-1);
   transform: scale(0.25);
 }
 span{
