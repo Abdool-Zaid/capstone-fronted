@@ -14,16 +14,13 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .logo{
   padding: 1%;
 }
 img{
-  width:152px ;
+  width:100px ;
   aspect-ratio: 1;
-}
-div{
-  /* background-color: green; */
+  border-radius: 50%;
 }
 </style>

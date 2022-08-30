@@ -1,6 +1,6 @@
 <template>
   <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#navModal">
+<button type="button" class="btn homeButton" data-bs-toggle="modal" data-bs-target="#navModal">
   <HomeView/>
   </button>
 
@@ -41,7 +41,10 @@
   width: 80vw ;
   height: 90vh;
 } */
-
+.homeButton{
+  left: 0;
+  border: 0px;
+}
 #nav{
   display: flex;
   flex-direction: column;

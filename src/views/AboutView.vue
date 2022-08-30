@@ -25,3 +25,10 @@
     height: 100vh;
   }
 </style>
+<script>
+  export default{
+    props:{
+      
+    }
+  }
+</script>
