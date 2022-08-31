@@ -1,7 +1,7 @@
 <template>
   <div class="container d-flex justify-content-center align-items-center">
     <div>
-      <form v-on:submit.prevent="sendUserData() ">
+      <form v-on:submit.prevent="sendUserData()">
         <div class="mb-3">
           <label for="email" class="form-label">email address</label>
           <input type="email" class="form-control" v-model="email" />
@@ -37,39 +37,32 @@ export default {
     };
   },
   methods: {
+    
+// 
     async VerifyUser() {
-      const response = await fetch(
+      fetch(
         "https://tubular-malasada-d6c6b7.netlify.app/.netlify/functions/api/users/user/verify",
         {
           method: "GET",
-          mode: "no-cors",
           headers: {
-            "Content-type": "application/json",
-            "x-auth-token": JSON.parse(localStorage.token),
-          }
+            "Content-Type": "application/json",
+            "x-auth-token":JSON.parse(localStorage.token)
+          },
         }
-      );
-      await response;
-      let UserData =response.json()
-      console.log(UserData);
-
-      if (UserData.msg == "Unauthorized Access!") {
-        // alert("login first");
-        console.log(UserData.msg);
-      } else {
-        localStorage.setItem(
-          "UserName",
-          JSON.stringify(UserData.user.username)
-        );
-        localStorage.setItem("UserID", JSON.stringify(UserData.user.id));
-        localStorage.setItem("UserIntro", JSON.stringify(UserData.user.intro));
-        localStorage.setItem(
-          "UserProfile",
-          JSON.stringify(UserData.user.profile)
-        );
-        alert(`welcome ` + (await JSON.parse(localStorage.UserName)));
-      }
-    },
+      )
+        .then((res) => res.json())
+        .then((tokendata) => {
+          if (tokendata.error) {
+            alert(tokendata.error);
+          } else {
+            console.log(tokendata.decodedToken.user)
+            localStorage.setItem("user_id", JSON.stringify(tokendata.decodedToken.user.id));
+            localStorage.setItem("username", JSON.stringify(tokendata.decodedToken.user.username));
+            localStorage.setItem("intro", JSON.stringify(tokendata.decodedToken.user.intro));
+            localStorage.setItem("profile", JSON.stringify(tokendata.decodedToken.user.profile));
+          }
+        });
+           },
 
     async sendUserData() {
       fetch(
