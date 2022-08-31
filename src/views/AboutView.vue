@@ -49,7 +49,10 @@ export default {
           }
         }
       );
-      let UserData = await response.json();
+      await response;
+      let UserData =response.json()
+      console.log(UserData);
+
       if (UserData.msg == "Unauthorized Access!") {
         // alert("login first");
         console.log(UserData.msg);
