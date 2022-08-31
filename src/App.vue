@@ -4,8 +4,9 @@
   <!--  nav-->
   <NAvBAr/>
   <!--  nav-->
-  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="false">
+  <div id="mainCarousel" class="carousel slide" data-bs-ride="false">
   <div class="carousel-inner">
+    
     <div class="carousel-item active">
     </div>
     <div class="carousel-item">

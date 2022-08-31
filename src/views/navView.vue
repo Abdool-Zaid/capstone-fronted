@@ -14,7 +14,19 @@
       </div>
       <div class="modal-body">
         <div id="nav">
-  <router-link to="/">Home</router-link><div></div>
+           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active">home</button>
+           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1" >register</button>
+           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2" >user</button>
+           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="3" >friendslist</button>
+           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="4" >messages</button>
+           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="5" >groups</button>
+           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="6" >post</button>
+           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="7" >groupMessages</button>
+           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="8" >GroupMembers</button>
+           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="9" >GroupPosts</button>
+           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="10" >Posts</button>
+           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="11" >loign</button>
+  <!-- <router-link to="/">Home</router-link><div></div>
   <router-link to="/register">register</router-link><div></div>
   <router-link to="/user">user</router-link><div></div>
   <router-link to="/friendslist">friendslist</router-link><div></div>
@@ -25,7 +37,7 @@
   <router-link to="/GroupMembers">GroupMembers</router-link><div></div>
   <router-link to="/GroupPosts">GroupPosts</router-link><div></div>
   <router-link to="/Posts">Posts</router-link><div></div>
-  <router-link to="/login">loign</router-link><div></div>
+  <router-link to="/login">loign</router-link><div></div> -->
 </div>
       </div>
       <div class="modal-footer">
