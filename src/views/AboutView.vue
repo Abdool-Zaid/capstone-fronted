@@ -1,7 +1,7 @@
 <template>
   <div class="container d-flex justify-content-center align-items-center">
     <div>
-      <form v-on:submit.prevent="sendUserData(),VerifyUser() ">
+      <form v-on:submit.prevent="sendUserData() ">
         <div class="mb-3">
           <label for="email" class="form-label">email address</label>
           <input type="email" class="form-control" v-model="email" />
@@ -39,14 +39,14 @@ export default {
   methods: {
     async VerifyUser() {
       const response = await fetch(
-        "https://tubular-malasada-d6c6b7.netlify.app/users/user/verify",
+        "https://tubular-malasada-d6c6b7.netlify.app/.netlify/functions/api/users/user/verify",
         {
           method: "GET",
           mode: "no-cors",
           headers: {
             "Content-type": "application/json",
             "x-auth-token": JSON.parse(localStorage.token),
-          },
+          }
         }
       );
       let UserData = await response.json();
@@ -90,6 +90,7 @@ export default {
             localStorage.setItem("token", JSON.stringify(tokendata.token));
           }
         });
+        this.VerifyUser()
     },
   },
 };
