@@ -57,9 +57,13 @@ export default {
           } else {
             console.log(tokendata.decodedToken.user)
             localStorage.setItem("user_id", JSON.stringify(tokendata.decodedToken.user.id));
+            this.$store.state.id.push(tokendata.decodedToken.user.id);
             localStorage.setItem("username", JSON.stringify(tokendata.decodedToken.user.username));
+            this.$store.state.username.push(tokendata.decodedToken.user.username);
             localStorage.setItem("intro", JSON.stringify(tokendata.decodedToken.user.intro));
+            this.$store.state.intro.push(tokendata.decodedToken.user.intro);
             localStorage.setItem("profile", JSON.stringify(tokendata.decodedToken.user.profile));
+            this.$store.state.profile.push(tokendata.decodedToken.user.profile);
           }
         });
            },

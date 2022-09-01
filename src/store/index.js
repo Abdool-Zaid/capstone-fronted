@@ -1,8 +1,14 @@
 import { createStore } from "vuex";
+import createPersistedState from "vuex-persistedstate";
+
 
 export default createStore({
   state: {
-    user: [],
+    user:null,
+    id: [],
+    username: [],
+    intro: [],
+    profile: [],
     users: [],
     posts: [],
     messages: [],
@@ -20,4 +26,6 @@ export default createStore({
     },
   },
   modules: {},
+  plugins: [createPersistedState()],
+
 });
