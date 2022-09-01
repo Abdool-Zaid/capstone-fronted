@@ -2,8 +2,7 @@
   <div class="AllPosts">
     <h1>all posts page</h1>
     <div>
-
-      <div id="posts" v-for="post in posts" :key="post">
+      <div id="posts" v-for="post in Posts" :key="post">
         <div class="postCard" >
           <P>{{ post.userId }}</P>
           <P>{{ post.message }}</P>
@@ -18,7 +17,11 @@ export default {
   mounted() {
     this.sendUserData();
   },
-
+computed:{
+  Posts(){
+    return this.$store.state.posts
+  }
+},
   data() {
     return {
       posts: this.$store.state.posts,
@@ -46,11 +49,14 @@ export default {
             let i;
             for (i = 0; i < returnData.length; i++) {
               this.$store.state.posts.push(returnData[i]);
-              console.log(this.$store.state.posts);
+              // console.log(this.$store.state.posts);
             }
           }
         });
-      setTimeout(this.sendUserData, 1000);
+        
+      setTimeout(function(){
+        this.sendUserData;
+        this.Posts}, 1000);
     },
   },
 };

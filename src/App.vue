@@ -20,11 +20,9 @@
       <div class="carousel-item">
         <register />
       </div>
-      <div v-if="user">
         <div class="carousel-item">
           <UserView />
         </div>
-      </div>
       <div class="carousel-item">
         <PostsView />
       </div>
