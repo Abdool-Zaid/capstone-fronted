@@ -1,12 +1,19 @@
 <template>
   <div class="AllPosts">
     <h1>all posts page</h1>
-    <button @click="sendUserData()">get</button>
+    <div id="posts" v-for="post in posts" :key="post">
+
+    </div>
+    
   </div>
 </template>
 
 <script>
 export default {
+  mounted() {
+    this.sendUserData();
+  },
+
   data() {
     return {
       user: this.$store.state.user,
@@ -14,7 +21,7 @@ export default {
     };
   },
   methods: {
-    async sendUserData() {
+    sendUserData() {
       fetch(
         "https://tubular-malasada-d6c6b7.netlify.app/.netlify/functions/api/userPost",
         {
@@ -22,7 +29,6 @@ export default {
           headers: {
             "Content-Type": "application/json",
           },
-          
         }
       )
         .then((res) => res.json())
@@ -30,11 +36,12 @@ export default {
           if (returnData.error) {
             alert(returnData.error);
           } else {
-            console.log(returnData)
+            console.log(returnData, Math.ceil(Math.random() * 9999));
           }
         });
-        setTimeout(sendUserData(), 2000)
+        
+      setTimeout(this.sendUserData, 500);
     },
   },
-}
+};
 </script>
