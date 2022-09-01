@@ -1,26 +1,23 @@
-import { createStore } from 'vuex'
+import { createStore } from "vuex";
 
 export default createStore({
   state: {
-    user:[],
-    users:[],
-    posts:[],
-    messages:[],
-    groupMessages:[],
-    name:'Terra Scientia'
+    user: [],
+    users: [],
+    posts: [],
+    messages: [],
+    groupMessages: [],
+    name: "Terra Scientia",
   },
-  getters: {
-  },
-  mutations: {
-  },
+  getters: {},
+  mutations: {},
   actions: {
-    verify:()=>{
-      console.log('verify')
+    verify: () => {
+      console.log("verify");
     },
-    login: ()=>{
-     console.log('login')
-    }
+    login: () => {
+      console.log("login");
+    },
   },
-  modules: {
-  }
-})
+  modules: {},
+});

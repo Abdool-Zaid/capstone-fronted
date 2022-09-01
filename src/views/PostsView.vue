@@ -2,9 +2,11 @@
   <div class="AllPosts">
     <h1>all posts page</h1>
     <div id="posts" v-for="post in posts" :key="post">
-
+      <div class="postCard" id="{{post.id}}">
+        <P>{{ post.userId }}</P>
+        <P>{{ post.message }}</P>
+      </div>
     </div>
-    
   </div>
 </template>
 
@@ -16,12 +18,12 @@ export default {
 
   data() {
     return {
-      user: this.$store.state.user,
-      message: "",
+      posts: this.$store.state.posts,
     };
   },
   methods: {
     sendUserData() {
+      this.$store.state.posts = [];
       fetch(
         "https://tubular-malasada-d6c6b7.netlify.app/.netlify/functions/api/userPost",
         {
@@ -37,10 +39,15 @@ export default {
             alert(returnData.error);
           } else {
             console.log(returnData, Math.ceil(Math.random() * 9999));
+            localStorage.setItem("postData", JSON.stringify(returnData));
+            let i;
+            for (i = 0; i < returnData.length; i++) {
+              this.$store.state.posts.push(returnData[i]);
+              console.log(this.$store.state.posts);
+            }
           }
         });
-        
-      setTimeout(this.sendUserData, 500);
+      setTimeout(this.sendUserData, 1000);
     },
   },
 };

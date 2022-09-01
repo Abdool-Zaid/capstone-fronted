@@ -25,18 +25,6 @@
            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="8" >GroupMembers</button>
            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="9" >GroupPosts</button>
            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="10" >friendslist</button>
-  <!-- <router-link to="/">Home</router-link><div></div>
-  <router-link to="/register">register</router-link><div></div>
-  <router-link to="/user">user</router-link><div></div>
-  <router-link to="/friendslist">friendslist</router-link><div></div>
-  <router-link to="/messages">messages</router-link><div></div>
-  <router-link to="/groups">groups</router-link><div></div>
-  <router-link to="/post">post</router-link><div></div>
-  <router-link to="/groupMessages">groupMessages</router-link><div></div>
-  <router-link to="/GroupMembers">GroupMembers</router-link><div></div>
-  <router-link to="/GroupPosts">GroupPosts</router-link><div></div>
-  <router-link to="/Posts">Posts</router-link><div></div>
-  <router-link to="/login">loign</router-link><div></div> -->
 </div>
       </div>
       <div class="modal-footer">
