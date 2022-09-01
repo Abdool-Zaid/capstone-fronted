@@ -4,17 +4,16 @@
   <!--  nav-->
   <NAvBAr/>
   <!--  nav-->
+    <!-- <router-view/> -->
   <div id="mainCarousel" class="carousel slide" data-bs-ride="false">
   <div class="carousel-inner">
-    
-    <div class="carousel-item active">
+    <!-- <div class="carousel-item active">
     </div>
     <div class="carousel-item">
-  <!-- <router-view/> -->
 
-    </div>
+    </div> -->
     <!--  -->
-    <div class="carousel-item">
+    <div class="carousel-item active">
 <login/>
     </div>
     <!--  -->
