@@ -1,19 +1,11 @@
 <template>
-  <!-- name  -->
-
-  <!--  nav-->
   <NAvBAr />
-  <!--  nav-->
-  <!-- <router-view/> -->
   <div id="mainCarousel" class="carousel  slide" data-bs-ride="false" data-bs-touch="true">
     <div class="carousel-inner">
-      <!-- <div class="carousel-item active">
-    </div>
-    <div class="carousel-item">
-
-    </div> -->
-      <!--  -->
       <div class="carousel-item active">
+        <HomeView />
+      </div>
+      <div class="carousel-item ">
         <login />
       </div>
       <!--  -->
@@ -114,12 +106,26 @@ export default {
   box-sizing: border-box;
   font-family: "Literata", serif;
 }
+::-webkit-scrollbar {
+        display: none;
+      }
+:root{
+  --ss:1%;
+  --sm:1em;
+--bg:#a9fba2;
+--sixty:#0081e5;
+--thirty:#da204bde;
+--ten:#a622e3;
+--chesthair:#00000000;
+}
+
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #0c3e50;
+  color:var(--sixty);
 }
 
 nav {

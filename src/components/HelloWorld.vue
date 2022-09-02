@@ -19,8 +19,6 @@ export default {
   padding: 1%;
 }
 img{
-  width:100px ;
   aspect-ratio: 1;
-  border-radius: 50%;
 }
 </style>

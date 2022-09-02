@@ -87,7 +87,7 @@ export default {
           if (tokendata.error) {
             alert(tokendata.error);
           } else {
-            localStorage.clear()
+            // localStorage.clear()
             localStorage.setItem("token", JSON.stringify(tokendata.token));
           }
         });

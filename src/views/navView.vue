@@ -1,10 +1,9 @@
 <template>
-  <!-- Button trigger modal -->
-<button type="button" class="btn homeButton" data-bs-toggle="modal" data-bs-target="#navModal">
-  <HomeView/>
-  </button>
+  <div id="navbar"  class="d-flex justify-content-around">
+    <h1>{{name}}</h1>
+    <button type="button" class="btn homeButton" data-bs-toggle="modal" data-bs-target="#navModal"> &#9778;</button>
+  </div>
 
-<!-- Modal -->
 <div class="modal fade" id="navModal" tabindex="-1" aria-labelledby="navModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -14,17 +13,18 @@
       </div>
       <div class="modal-body">
         <div id="nav">
-           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active">login</button>
-           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1" >register</button>
-           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2" >user</button>
-           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="3" >Posts</button>
-           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="4" >submit post</button>
-           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="5" >personal messages</button>
-           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="6" >Groups</button>
-           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="7" >groupMessages</button>
-           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="8" >GroupMembers</button>
-           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="9" >GroupPosts</button>
-           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="10" >friendslist</button>
+           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active rounded" >home</button>
+           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1"  class="rounded">login</button>
+           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2"  class="rounded">register</button>
+           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="3"  class="rounded">user</button>
+           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="4"  class="rounded">Posts</button>
+           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="5"  class="rounded">submit new post</button>
+           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="6"  class="rounded">personal messages</button>
+           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="7"  class="rounded">Groups</button>
+           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="8"  class="rounded">groupMessages</button>
+           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="9"  class="rounded">GroupMembers</button>
+           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="10"  class="rounded">GroupPosts</button>
+           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="11" class="rounded" >friendslist</button>
 </div>
       </div>
       <div class="modal-footer">
@@ -44,13 +44,26 @@
   left: 0;
   border: 0px;
 }
+.modal-body{
+  height: 80vh;
+background-color: var(--sixty);
+}
 #nav{
   display: flex;
   flex-direction: column;
-  height: 80vh;
+  justify-content: space-between;
+  height: 100%;
 }
 #nav > * {
 width: 100%;
+}
+
+.rounded{
+  margin:var(--ss);
+  padding:var(--ss);
+background-color: var(--thirty);
+border-color: var(--chesthair);  
+color:var(--ten);
 }
 </style>
 <script>
@@ -58,6 +71,11 @@ import HomeView from './HomeView.vue';
 // import HomeView from './HomeView.vue';
   export default{
     name: "NAvBAr",
-    components: { HomeView}
+    components: { HomeView, HomeView },
+    data() {
+      return {
+        name:this.$store.state.name
+      }
+    },
 }
 </script>

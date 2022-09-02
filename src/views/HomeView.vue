@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home ">
     <!-- <h1>aaaaaaaaa</h1> -->
     <HelloWorld msg="Welcome to the land of knowledge"/>
 
@@ -17,3 +17,11 @@ export default {
   }
 }
 </script>
+<style>
+  .home{
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+  }
+</style>
