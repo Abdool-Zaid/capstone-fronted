@@ -21,12 +21,8 @@ computed:{
   Posts(){
     return this.$store.state.posts
   }
+  
 },
-  data() {
-    return {
-      posts: this.$store.state.posts,
-    };
-  },
   methods: {
     sendUserData() {
       fetch(
@@ -43,19 +39,16 @@ computed:{
           if (returnData.error) {
             alert(returnData.error);
           } else {
-            // console.log(returnData, Math.ceil(Math.random() * 9999));
             localStorage.setItem("postData", JSON.stringify(returnData));
             this.$store.state.posts = [];
             let i;
             for (i = 0; i < returnData.length; i++) {
               this.$store.state.posts.push(returnData[i]);
-              // console.log(this.$store.state.posts);
             }
           }
         });
-        
+        setTimeout(this.sendUserData, 1000);
       setTimeout(function(){
-        this.sendUserData;
         this.Posts}, 1000);
     },
   },

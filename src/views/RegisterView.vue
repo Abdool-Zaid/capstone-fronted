@@ -46,7 +46,6 @@ export default {
         "https://tubular-malasada-d6c6b7.netlify.app/.netlify/functions/api/users/register",
         {
           method: "POST",
-          mode:'no-cors',
           headers: {
             "Content-Type": "application/json",
           },
