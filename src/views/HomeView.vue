@@ -1,6 +1,5 @@
 <template>
   <div class="home ">
-    <!-- <h1>aaaaaaaaa</h1> -->
     <HelloWorld msg="Welcome to the land of knowledge"/>
 
   </div>
@@ -23,5 +22,6 @@ export default {
     height: 90vh;
     display: flex;
     justify-content: center;
+    background-color: var(--sixty);
   }
 </style>

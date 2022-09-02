@@ -40,7 +40,7 @@
         <FriendsListView />
       </div>
     </div>
-    <button
+    <!-- <button
       class="carousel-control-prev nav-bbutton"
       type="button"
       data-bs-target="#mainCarousel"
@@ -61,7 +61,7 @@
         src="https://raw.githubusercontent.com/Abdool-Zaid/capstone-fronted/main/src/assets/view.jpg"
         alt=""
       />
-    </button>
+    </button> -->
   </div>
 </template>
 // import home from '@/views/HomeView.vue' // import nav from
@@ -114,8 +114,8 @@ export default {
   --sm:1em;
 --bg:#a9fba2;
 --sixty:#0081e5;
---thirty:#da204bde;
---ten:#a622e3;
+--thirty:#ea580c;
+--ten:#844e98;
 --chesthair:#00000000;
 }
 

@@ -1,8 +1,12 @@
 <template>
-  <div id="navbar"  class="d-flex justify-content-around">
+  <button type="button" class="btn homeButton" data-bs-toggle="modal" data-bs-target="#navModal">
+      <div id="navbar"  class="d-flex justify-content-around">
     <h1>{{name}}</h1>
-    <button type="button" class="btn homeButton" data-bs-toggle="modal" data-bs-target="#navModal"> &#9778;</button>
-  </div>
+      <h1>
+        &#9778;
+      </h1>
+    </div>
+    </button>
 
 <div class="modal fade" id="navModal" tabindex="-1" aria-labelledby="navModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -41,8 +45,8 @@
   height: 90vh;
 } */
 .homeButton{
-  left: 0;
-  border: 0px;
+  width: 100vw;
+  border-color: var(--chesthair);
 }
 .modal-body{
   height: 80vh;
@@ -63,7 +67,7 @@ width: 100%;
   padding:var(--ss);
 background-color: var(--thirty);
 border-color: var(--chesthair);  
-color:var(--ten);
+color: white;
 }
 </style>
 <script>
