@@ -5,7 +5,7 @@
   <NAvBAr />
   <!--  nav-->
   <!-- <router-view/> -->
-  <div id="mainCarousel" class="carousel slide" data-bs-ride="false">
+  <div id="mainCarousel" class="carousel  slide" data-bs-ride="false" data-bs-touch="true">
     <div class="carousel-inner">
       <!-- <div class="carousel-item active">
     </div>

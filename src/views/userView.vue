@@ -2,9 +2,10 @@
   <div class="AllPosts">
     <h1>user page</h1>
     <div id="userCard">
-      <img :src="profile" alt="profile picture of user" />
+      <img :src="profile" alt="profile picture of user" class="rounded-circle border  border-primary border-opacity-75" />
       <H1>welcome back {{username }}</H1>
       <p>{{ intro }}</p>
+      <button class="btn homeButton" @click="logOUT()">log out</button>
     </div>
   </div>
 </template>
@@ -48,6 +49,17 @@ export default {
         this.intro;
       }, 1000);
     },
+    logOUT(){
+      alert('till next time ' + JSON.parse(localStorage.username))
+      localStorage.clear()
+      window.location.reload()
+    }
   },
 };
 </script>
+<style scoped>
+img{
+  height: 28vh;
+  aspect-ratio: 1;
+}
+</style>

@@ -81,12 +81,13 @@ export default {
             passwordHash: this.passwordHash,
           }),
         }
-      )
+        )
         .then((res) => res.json())
         .then((tokendata) => {
           if (tokendata.error) {
             alert(tokendata.error);
           } else {
+            localStorage.clear()
             localStorage.setItem("token", JSON.stringify(tokendata.token));
           }
         });

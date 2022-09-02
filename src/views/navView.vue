@@ -14,7 +14,7 @@
       </div>
       <div class="modal-body">
         <div id="nav">
-           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active">loign</button>
+           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active">login</button>
            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1" >register</button>
            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2" >user</button>
            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="3" >Posts</button>

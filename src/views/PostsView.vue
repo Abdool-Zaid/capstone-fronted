@@ -2,8 +2,9 @@
   <div class="AllPosts">
     <h1>all posts page</h1>
     <div>
-      <div id="posts" v-for="post in Posts" :key="post">
+      <div id="posts" v-for="post in Posts" :key="post"  aria-live="assertive" >
         <div class="postCard" >
+          <h6 class="d-none">{{post.id}}</h6>
           <P>{{ post.userId }}</P>
           <P>{{ post.message }}</P>
         </div>
