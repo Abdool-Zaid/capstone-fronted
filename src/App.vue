@@ -19,6 +19,8 @@
         <PostsView />
       </div>
       <div class="carousel-item">
+    <h1>new post page</h1>
+
         <PostView />
       </div>
       <div class="carousel-item">
@@ -114,7 +116,7 @@ export default {
   --sm:1em;
 --bg:#a9fba2;
 --sixty:#0081e5;
---thirty:#ea580c;
+--thirty:#b94100e1;
 --ten:#844e98;
 --chesthair:#00000000;
 }

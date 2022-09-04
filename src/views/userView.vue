@@ -7,13 +7,49 @@
       <p>{{ intro }}</p>
       <button class="btn homeButton" @click="logOUT()">log out</button>
     </div>
-  </div>
+<div id="userPosts" class=" rounded-top">
+  <p>user posts will go here</p>
+  <!-- <div id="mainCarousel" class="carousel  slide" data-bs-ride="false" data-bs-touch="true">
+    <div class="carousel-inner"> -->
+      <div id="posts" v-for="userpost in userPosts" :key="userpost" class="d-flex justify-content-center"  aria-live="assertive" >
+          <!-- <div class="carousel-item postCard rounded-pill"> -->
+          <p class="d-none">{{userpost.id}}</p>
+          <P>{{ userpost.userId }}</P>
+          <P>{{ userpost.message }}</P>
+      </div>
+</div>
+      </div>
+      <!-- </div> -->
+<!-- </div>
+  </div> -->
 </template>
 
 <script>
 export default {
   
   computed: {
+    initialise(){
+console.log('initialise')
+    },
+    userPosts() {
+                          // localStorage.setItem("user_id", JSON.stringify('returnData'));
+
+      let posts= this.$store.state.posts
+      let id=JSON.parse(localStorage.user_id)
+let i 
+let userPosts=[] 
+for(i=0;i<posts.length;i++){
+  if(posts[i].userId==id){
+userPosts.push(posts[i])
+  }
+}
+console.log(userPosts)
+
+return userPosts;
+        },
+        user() {
+            return this.$store.state.user;
+        },
     username() {
       return this.$store.state.username[0]
     },
@@ -27,15 +63,6 @@ export default {
   mounted() {
     this.sendUserData();
   },
-  // data() {
-  //   return {
-  //     id: this.$store.state.id[0],
-  //     username: this.$store.state.username[0],
-  //     intro: this.$store.state.intro[0],
-  //     profile: this.$store.state.profile[0],
-  //     user: this.$store.state.user,
-  //   };
-  // },
   methods: {
     sendUserData() {
       (this.$store.state.id[0] = JSON.parse(localStorage.user_id)),
@@ -43,11 +70,11 @@ export default {
         (this.$store.state.intro[0] = JSON.parse(localStorage.intro)),
         (this.$store.state.profile[0] = JSON.parse(localStorage.profile));
       // console.log('set') 
-      setTimeout(function(){
-        this.username;
-        this.profile;
-        this.intro;
-      }, 1000);
+      // setTimeout(function(){
+      //   this.username;
+      //   this.profile;
+      //   this.intro;
+      // }, 1000);
     },
     logOUT(){
       alert('till next time ' + JSON.parse(localStorage.username))
@@ -61,5 +88,18 @@ export default {
 img{
   height: 28vh;
   aspect-ratio: 1;
+}
+#userPosts{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 45vh;
+overflow-y: scroll;
+  border: 5px solid var(--thirty);
+  padding: var(--ss);
+}
+#userPosts > *{
+  margin: var(--sm);
+  padding: var(--ss);
 }
 </style>

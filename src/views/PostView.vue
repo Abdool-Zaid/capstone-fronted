@@ -1,10 +1,9 @@
 <template>
   <div class="AllPosts">
-    <h1>new post page</h1>
     <form v-on:submit.prevent="sendUserData()">
       <div class="mb-3">
         <label for="message" class="form-label">message</label>
-        <input type="text" class="form-control" v-model="message" />
+        <input type="text" class="form-control" v-model="message" required />
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>

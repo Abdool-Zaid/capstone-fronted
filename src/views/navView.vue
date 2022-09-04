@@ -1,5 +1,5 @@
 <template>
-  <button type="button" class="btn homeButton" data-bs-toggle="modal" data-bs-target="#navModal">
+  <button type="button" class="btn homeButton rounded-pill" data-bs-toggle="modal" data-bs-target="#navModal">
       <div id="navbar"  class="d-flex justify-content-around">
     <h1>{{name}}</h1>
       <h1>
@@ -45,9 +45,13 @@
   height: 90vh;
 } */
 .homeButton{
-  width: 100vw;
-  border-color: var(--chesthair);
+  margin-left:var(--ss) ;
+  margin-right:var(--ss) ;
+  width: 98vw;
+  border-color: var(--ten);
+  background-color: var(--ten);
 }
+
 .modal-body{
   height: 80vh;
 background-color: var(--sixty);
