@@ -102,6 +102,7 @@ export default {
 </script>
 
 <style>
+
 * {
   margin: 0;
   padding: 0;
@@ -120,7 +121,10 @@ export default {
 --ten:#844e98;
 --chesthair:#00000000;
 }
-
+.divBorder{
+  
+  border: 5px solid var(--thirty);
+}
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
