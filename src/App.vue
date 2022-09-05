@@ -13,6 +13,7 @@
         <register />
       </div>
         <div class="carousel-item">
+          <div class="show"></div> 
           <UserView />
         </div>
       <div class="carousel-item">

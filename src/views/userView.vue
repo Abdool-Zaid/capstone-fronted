@@ -24,44 +24,79 @@
           <!-- <P>{{ userpost.userId }}</P> -->
           <P>{{ userpost.message }}</P>
           <div class="controlButtons d-flex justify-content-center">
-            <button type="button" class="btn " data-bs-toggle="modal" :data-bs-target="'#m'+userpost.id" >
+            <button
+              type="button"
+              class="btn"
+              data-bs-toggle="modal"
+              :data-bs-target="'#m' + userpost.id"
+            >
               edit
-</button>
-<!-- <p class="btn" @click="deletePost(userpost.id)">delete</p> -->
-</div>
-<!-- Modal -->
-<div class="modal fade" :id="'m'+userpost.id" tabindex="-1" :aria-labelledby="'m'+userpost.id+'Label'" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" :id="'m'+userpost.id+'Label'">post {{userpost.id}}</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div>
+            </button>
+            <p class="btn" @click="deletePost(userpost.id)">delete</p>
+          </div>
 
-          <P>{{ userpost.message }}</P>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <!-- <button type="button" class="btn btn-primary" @click="editPost(userpost.id)">Save changes</button> -->
+          <!-- Modal -->
+          <div
+            class="modal fade"
+            :id="'m' + userpost.id"
+            tabindex="-1"
+            :aria-labelledby="'m' + userpost.id + 'Label'"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" :id="'m' + userpost.id + 'Label'">
+                    post {{ userpost.id }}
+                  </h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <div>
+                    <input
+                      type="text"
+                      v-model="message"
+                      :placeholder="userpost.message"
+                    />
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-primary"
+                      @click="editPost(userpost.id)"
+                    >
+                      Save changes
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  
-
-
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      message: "",
+    };
+  },
   computed: {
     initialise() {
       console.log("initialise");
@@ -97,6 +132,7 @@ export default {
   mounted() {
     this.sendUserData();
   },
+
   methods: {
     sendUserData() {
       (this.$store.state.id[0] = JSON.parse(localStorage.user_id)),
@@ -115,40 +151,21 @@ export default {
       localStorage.clear();
       window.location.reload();
     },
-    async editPost(id){
-      // fetch(
-      //   "https://tubular-malasada-d6c6b7.netlify.app/.netlify/functions/api/userPost/" +id,
-      //   {
-      //     method: "PUT",
-      //     headers: {
-      //       "Content-Type": "application/json",
-      //       "x-auth-token": JSON.parse(localStorage.token),
-      //     },
-      //     body: JSON.stringify({
-      //       userId:JSON.parse(localStorage.user_id),
-      //       message: this.message,
-      //     }),
-      //   }
-      // )
-      //   .then((res) => res.json())
-      //   .then((returnData) => {
-      //     if (returnData.error) {
-      //       alert(returnData.error);
-      //     } else {
-      //       alert(returnData.msg)
-      //     }
-      //   });
-      console.log(id)
-    },
-    async deletePost(id){
+    async editPost(id) {
       fetch(
-        "https://tubular-malasada-d6c6b7.netlify.app/.netlify/functions/api/userPost/" +id ,
+        "https://tubular-malasada-d6c6b7.netlify.app/.netlify/functions/api/userPost/" +
+          id,
         {
-          method: "DELETE",
+          method: "PUT",
+
           headers: {
             "Content-Type": "application/json",
             "x-auth-token": JSON.parse(localStorage.token),
-          }
+          },
+          body: JSON.stringify({
+            userId: JSON.parse(localStorage.user_id),
+            message: this.message,
+          }),
         }
       )
         .then((res) => res.json())
@@ -156,13 +173,33 @@ export default {
           if (returnData.error) {
             alert(returnData.error);
           } else {
-            alert(`deleted `+returnData.affectedRows +` post`)
+          }
+          alert(returnData.message)
+        });
+    },
+    async deletePost(id) {
+      fetch(
+        "https://tubular-malasada-d6c6b7.netlify.app/.netlify/functions/api/userPost/" +
+          id,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+            "x-auth-token": JSON.parse(localStorage.token),
+          },
+        }
+      )
+        .then((res) => res.json())
+        .then((returnData) => {
+          if (returnData.error) {
+            alert(returnData.error);
+          } else {
+            alert(`deleted ` + returnData.affectedRows + ` post`);
           }
         });
-      console.log(id)
-    }
+      console.log(id);
+    },
   },
-
 };
 </script>
 <style scoped>
@@ -171,7 +208,8 @@ img {
   aspect-ratio: 1;
 }
 #userPosts {
-  position: fixed;
+  /* position: fixed; */
+  max-width: 45vw;
   bottom: 0;
   left: 0;
   height: 45vh;
@@ -185,7 +223,7 @@ img {
 .userPostCard {
   border-color: var(--thirty);
 }
-.controlButtons >* {
+.controlButtons > * {
   padding: var(--ss);
 }
 </style>
