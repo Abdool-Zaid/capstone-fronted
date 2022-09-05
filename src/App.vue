@@ -84,6 +84,16 @@ import GroupMembersView from "./views/GroupMembersView.vue";
 import FriendsListView from "./views/friendsListView.vue";
 import GroupPostsView from "./views/GroupPostsView.vue";
 export default {
+  mounted(){
+this.initialised()
+  },
+  methods:{
+    initialised(){
+      // localStorage.clear()
+  // let user_id = localStorage.setItem("user_id", JSON.stringify(''));
+console.log('initialised')
+}
+  },
   components: {
     HomeView,
     NAvBAr,
