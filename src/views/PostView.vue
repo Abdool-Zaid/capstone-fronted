@@ -27,6 +27,7 @@ export default {
         "https://tubular-malasada-d6c6b7.netlify.app/.netlify/functions/api/userPost/newPost",
         {
           method: "POST",
+        
           headers: {
             "Content-Type": "application/json",
             "x-auth-token": JSON.parse(localStorage.token),
