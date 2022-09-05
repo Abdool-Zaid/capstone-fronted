@@ -27,8 +27,8 @@
            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="7"  class="rounded">Groups</button>
            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="8"  class="rounded">groupMessages</button>
            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="9"  class="rounded">GroupMembers</button>
-           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="10"  class="rounded">GroupPosts</button>
-           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="11" class="rounded" >friendslist</button>
+           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="10"  class="rounded">contact</button>
+           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="11" class="rounded" >about Us</button>
 </div>
       </div>
       <div class="modal-footer">

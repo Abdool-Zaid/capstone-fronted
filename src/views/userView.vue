@@ -140,6 +140,7 @@ export default {
   },
 
   methods: {
+    // https://tubular-malasada-d6c6b7.netlify.app/.netlify/functions/api/users/
     sendUserData() {
       (this.$store.state.id[0] = JSON.parse(localStorage.user_id)),
         (this.$store.state.username[0] = JSON.parse(localStorage.username)),

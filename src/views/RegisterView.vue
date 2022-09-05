@@ -4,15 +4,15 @@
     <form v-on:submit.prevent="sendUserData()">
       <div class="mb-3">
         <label for="username" class="form-label">username</label>
-        <input type="text" class="form-control" v-model="username" />
+        <input type="text" class="form-control" v-model="username" required/>
       </div>
       <div class="mb-3">
         <label for="email" class="form-label">email address</label>
-        <input type="email" class="form-control" v-model="email" />
+        <input type="email" class="form-control" v-model="email" required/>
       </div>
       <div class="mb-3">
         <label for="passwordHash" class="form-label">password</label>
-        <input type="password" class="form-control" v-model="passwordHash" />
+        <input type="password" class="form-control" v-model="passwordHash" required/>
       </div>
       <div class="mb-3">
         <label for="intro" class="form-label">intro</label>

@@ -1,6 +1,6 @@
 <template>
   <div class="AllPosts">
-    <h1>maidenless runt</h1>
+    <h1>about us</h1>
   </div>
 </template>
 
