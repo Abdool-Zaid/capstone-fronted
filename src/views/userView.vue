@@ -9,7 +9,7 @@
       />
       <H1>welcome back {{ username }}</H1>
       <p>{{ intro }}</p>
-      <button class="btn homeButton" @click="logOUT()">log out</button>
+      <!-- <button class="btn homeButton" @click="logOUT()">log out</button> -->
     </div>
     <div id="userPosts" class="rounded-top">
       <div
@@ -21,16 +21,43 @@
       >
         <div class="userPostCard divBorder">
           <p class="d-none">{{ userpost.id }}</p>
-          <P>{{ userpost.userId }}</P>
+          <!-- <P>{{ userpost.userId }}</P> -->
           <P>{{ userpost.message }}</P>
           <div class="controlButtons d-flex justify-content-center">
-            <p class="btn" @click="editPost(userpost.id)">edit</p>
-            <p class="btn" @click="deletePost(userpost.id)">delete</p>
-          </div>
+            <button type="button" class="btn " data-bs-toggle="modal" :data-bs-target="'#m'+userpost.id" >
+              edit
+</button>
+<!-- <p class="btn" @click="deletePost(userpost.id)">delete</p> -->
+</div>
+<!-- Modal -->
+<div class="modal fade" :id="'m'+userpost.id" tabindex="-1" :aria-labelledby="'m'+userpost.id+'Label'" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" :id="'m'+userpost.id+'Label'">post {{userpost.id}}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div>
+
+          <P>{{ userpost.message }}</P>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <!-- <button type="button" class="btn btn-primary" @click="editPost(userpost.id)">Save changes</button> -->
         </div>
       </div>
     </div>
   </div>
+</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+
 </template>
 
 <script>
@@ -89,30 +116,28 @@ export default {
       window.location.reload();
     },
     async editPost(id){
-      fetch(
-        "https://tubular-malasada-d6c6b7.netlify.app/.netlify/functions/api/userPost/newPost",
-        {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-            "x-auth-token": JSON.parse(localStorage.token),
-          },
-          body: JSON.stringify({
-
-            id:id,
-            userId:JSON.parse(localStorage.user_id),
-            message: this.message,
-          }),
-        }
-      )
-        .then((res) => res.json())
-        .then((returnData) => {
-          if (returnData.error) {
-            alert(returnData.error);
-          } else {
-            alert(returnData.msg)
-          }
-        });
+      // fetch(
+      //   "https://tubular-malasada-d6c6b7.netlify.app/.netlify/functions/api/userPost/" +id,
+      //   {
+      //     method: "PUT",
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //       "x-auth-token": JSON.parse(localStorage.token),
+      //     },
+      //     body: JSON.stringify({
+      //       userId:JSON.parse(localStorage.user_id),
+      //       message: this.message,
+      //     }),
+      //   }
+      // )
+      //   .then((res) => res.json())
+      //   .then((returnData) => {
+      //     if (returnData.error) {
+      //       alert(returnData.error);
+      //     } else {
+      //       alert(returnData.msg)
+      //     }
+      //   });
       console.log(id)
     },
     async deletePost(id){
