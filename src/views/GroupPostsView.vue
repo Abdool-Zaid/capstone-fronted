@@ -10,7 +10,7 @@
         </div>
       </div>
       <div id="emoters" >
-        <div class="contactCard " v-for="(user, index) in users" :key="user" >
+        <div class="contactCard " v-for="(user, index) in users" :key="user" aria-live="assertive">
           <h4>{{ user.username }}</h4>
           <img
             :src="user.profile"
@@ -22,23 +22,25 @@
             type="button"
             class="btn"
             data-bs-toggle="modal"
-            :data-bs-target="'#m' + user.id"
+            :data-bs-target="'#modalNumber' + index"
             >
-            contact me
+            my posts
           </p>
+          <a :href="`mailto:${user.email}`"  target="_blank" rel="noopener noreferrer">Send Email</a>|
+          <a href="mailto:aztoorabally7447@gmail.com"> mail me </a>
         </div>
         
         <!-- Modal -->
         <div
             class="modal fade"
-            :id="'m' + user.id"
+            :id="'modalNumber' + index"
             tabindex="1"
-            
+            :aria-labelledby="'m' + index+ 'Label'"
           >
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" :id="'m' + index+ 'Label'">
+                <h5 class="modal-title" :id="'modalNumber' + index+ 'Label'">
                   post {{ index}}
                 </h5>
                 <button
@@ -49,6 +51,51 @@
                 </div>
                 <div class="modal-body">
                   <div>
+                  
+
+    <form>
+      <label for="target-email-id">Target Email ID</label>
+      <input
+        name="target-email-id"
+        :placeholder="user.email"
+        type="email"
+        v-model="emailId"
+        v-on:keyup="updateOutputUrl"
+      />
+      <label for="subject">Subject</label>
+      <input
+        name="subject"
+        placeholder="Subject"
+        type="text"
+        v-model="email.subject"
+        v-on:keyup="updateOutputUrl"
+      />
+      <label for="cc">CC</label>
+      <input
+        name="cc"
+        placeholder="CC"
+        type="text"
+        v-model="email.cc"
+        v-on:keyup="updateOutputUrl"
+      />
+      <label for="bcc">BCC</label>
+      <input
+        name="bcc"
+        placeholder="BCC"
+        type="text"
+        v-model="email.bcc"
+        v-on:keyup="updateOutputUrl"
+      />
+      <label for="body">Body</label>
+      <textarea
+        name="body"
+        placeholder="Body"
+        type="text"
+        v-model="email.body"
+        v-on:keyup="updateOutputUrl"
+      ></textarea>
+      <input type="hidden" id="final-link-to-copy" :value="outputUrl" />
+    </form>
                     <input
                     type="text"
                     v-model="message"
@@ -116,17 +163,41 @@ overflow: scroll;
 // @ is an alias to /src
 // import HelloWorld from '@/components/HelloWorld.vue'
 
+import { thisTypeAnnotation } from '@babel/types';
+
 export default {
   mounted() {
     this.sendUserData();
+    this.updateOutputUrl();
   },
   computed: {
     Posts() {
       return this.$store.state.posts;
     },
     users() {
-      return this.$store.state.users;
+      let allUsers=this.$store.state.users
+      let i
+      let users=[]
+      for(i=0;i<allUsers.length;i++){
+        if(allUsers[i].id!=localStorage.user_id){
+users.push(allUsers[i])
+        }
+      }
+      return users;
+
     },
+  },
+  data(){
+    return {
+      outputUrl: "Type something",
+      emailId: "you@example.com",
+      email: {
+        subject: "Hey there",
+        cc: "somebody@example.com",
+        bcc: "somebody.else@example.com",
+        body: "Hey there, how have you been?"
+      }
+    };
   },
   methods: {
     sendUserData() {
@@ -160,7 +231,33 @@ export default {
     contactMe(dataLoad){
       console.log(dataLoad)
       console.trace()
-    }
+    },
+    updateOutputUrl() {
+      this.outputUrl = "mailto:" + this.emailId;
+      const emailKeys = Object.keys(this.email);
+      const remaining = emailKeys.filter(
+        (key) => this.email[key].trim().length > 0
+      );
+      if (remaining.length > 0) {
+        this.outputUrl += "?";
+      }
+      this.outputUrl += remaining
+        .map((key) => `${key}=${encodeURI(this.email[key].trim())}`)
+        .join("&");
+    },
+    copyToClipboard() {
+      const finalLinkToCopy = document.querySelector("#final-link-to-copy");
+      finalLinkToCopy.setAttribute("type", "text");
+      finalLinkToCopy.select();
+      try {
+        let res = document.execCommand("copy");
+        alert("Copied to clipboard!");
+      } catch (e) {
+        alert("Unable to copy! Please select the text & copy it.");
+      }
+      finalLinkToCopy.setAttribute("type", "hidden");
+      window.getSelection().removeAllRanges();
+    },
   },
 };
 </script>
