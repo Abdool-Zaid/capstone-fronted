@@ -86,12 +86,30 @@ import GroupPostsView from "./views/GroupPostsView.vue";
 export default {
   mounted(){
 this.initialised()
+this.reading()
   },
   methods:{
     initialised(){
+      
+let id = JSON.parse(localStorage.getItem("user_id"))
+  ? JSON.parse(localStorage.getItem("user_id"))
+  :localStorage.getItem("user_id", JSON.stringify(2));
+  let loggedIN=JSON.parse(localStorage.getItem("isLoggedIN"))
+  ?JSON.parse(localStorage.getItem("isLoggedIN"))
+  :localStorage.setItem('isLoggedIN', JSON.stringify(false));
+
+  this.$store.state.loggedIN=JSON.parse(localStorage.loggedIN)
+
       // localStorage.clear()
   // let user_id = localStorage.setItem("user_id", JSON.stringify(''));
 console.log('initialised')
+console.log(this.$store.state.loggedIN)
+},
+reading(){
+  console.log( document.querySelector('.carousel-item').classList )
+              // setTimeout(this.sendUserData, 1000);
+
+  // setTimeout(this.reading,1000)
 }
   },
   components: {
@@ -119,6 +137,9 @@ console.log('initialised')
   padding: 0;
   box-sizing: border-box;
   font-family: "Literata", serif;
+}
+.carousel-item :first-child{
+  margin-top:2em ;
 }
 ::-webkit-scrollbar {
         display: none;

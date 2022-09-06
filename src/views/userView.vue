@@ -1,7 +1,8 @@
 <template>
   <div class="AllPosts">
     <h1>user page</h1>
-    <div id="userCard">
+   
+    <div id="userCard"  v-if="loggedIN">
       <img
         :src="profile"
         alt="profile picture of user"
@@ -101,17 +102,20 @@ export default {
   data() {
     return {
       message: "",
+   
     };
   },
   computed: {
+    loggedIN(){
+       return this.$store.state.loggedIN
+    },
     initialise() {
       console.log("initialise");
     },
     userPosts() {
-      // localStorage.setItem("user_id", JSON.stringify('returnData'));
-
-      let posts = this.$store.state.posts;
-      let id = JSON.parse(localStorage.user_id);
+      
+      let posts = this.$store.state.allPosts;
+      let id = this.$store.state.id;
       let i;
       let userPosts = [];
       for (i = 0; i < posts.length; i++) {

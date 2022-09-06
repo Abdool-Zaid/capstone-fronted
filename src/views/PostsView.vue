@@ -1,8 +1,8 @@
 <template>
   <div class="AllPosts">
     <h1>all posts page</h1>
-    <div>
-      <div id="posts" v-for="post in Posts" :key="post" class="d-flex justify-content-center"  aria-live="assertive" >
+    <div class="postWrapper">
+      <div  v-for="post in Posts" :key="post" class="d-flex justify-content-center"  aria-live="assertive" >
         <div class="postCard rounded-pill" >
           <h6 class="d-none">{{post.id}}</h6>
           <P>{{ post.userId }}</P>
@@ -17,6 +17,9 @@
   </div>
 </template>
 <style>
+  .postWrapper{
+    overflow-y: scroll;
+  }
 .postCard{
   margin: var(--ss);
   padding: var(--ss);
@@ -38,7 +41,7 @@ export default {
     },
     computed: {
         Posts() {
-            return this.$store.state.posts;
+            return this.$store.state.allPosts;
         },
         user() {
             return this.$store.state.user;
@@ -58,13 +61,14 @@ export default {
                     alert(returnData.error);
                 }
                 else {
+                  
                     returnData.reverse();
                     localStorage.setItem("postData", JSON.stringify(returnData));
-                    this.$store.state.posts = [];
+                    this.$store.state.allPosts = [];
                     let i;
                     for (i = 0; i < returnData.length; i++) {
-                        this.$store.state.posts.push(returnData[i]);
-                    }
+                        this.$store.state.allPosts.push(returnData[i]);
+                      }
                 }
             });
             // setTimeout(this.sendUserData, 1000);

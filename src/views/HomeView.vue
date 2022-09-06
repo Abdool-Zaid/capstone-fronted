@@ -18,8 +18,13 @@ export default {
 </script>
 <style>
   .home{
+    z-index: -5;
+    position: fixed;
+    overflow: hidden;
+    margin-top:0 !important;
+    top: 0;
     width: 100vw;
-    height: 90vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     background-color: var(--sixty);

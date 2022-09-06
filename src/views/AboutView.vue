@@ -87,7 +87,7 @@ export default {
           if (tokendata.error) {
             alert(tokendata.error);
           } else {
-            // localStorage.clear()
+            localStorage.setItem("isLoggedIN", JSON.stringify(true));
             localStorage.setItem("token", JSON.stringify(tokendata.token));
           }
         });

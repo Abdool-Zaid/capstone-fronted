@@ -11,9 +11,11 @@ export default createStore({
     profile: [],
     users: [],
     posts: [],
+    allPosts: [],
     messages: [],
     groupMessages: [],
     name: "Terra Scientia",
+    loggedIN:false
   },
   getters: {},
   mutations: {},

@@ -50,11 +50,23 @@
   width: 98vw;
   border-color: var(--ten);
   background-color: var(--ten);
+  z-index: 10;
+  position: fixed;
+}
+h1{
+  color: var(--sixty);
+}
+h1:hover{
+  color: var(--thirty);
 }
 
 .modal-body{
   height: 80vh;
 background-color: var(--sixty);
+}
+button{
+  top: 0;
+  left: 0;
 }
 #nav{
   display: flex;
