@@ -17,18 +17,18 @@
       </div>
       <div class="modal-body">
         <div id="nav">
-           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active rounded" >home</button>
-           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1"  class="rounded">login</button>
-           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2"  class="rounded">register</button>
-           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="3"  class="rounded">user</button>
-           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="4"  class="rounded">Posts</button>
-           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="5"  class="rounded">submit new post</button>
-           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="6"  class="rounded">personal messages</button>
-           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="7"  class="rounded">Groups</button>
-           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="8"  class="rounded">groupMessages</button>
-           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="9"  class="rounded">GroupMembers</button>
-           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="10"  class="rounded">contact</button>
-           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="11" class="rounded" >about Us </button>
+           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0"  @click="dismisModal()" class="active rounded " >home</button>
+           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1"  @click="dismisModal()"  class="rounded ">login</button>
+           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2"  @click="dismisModal()"  class="rounded ">register</button>
+           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="3"  @click="dismisModal()"  class="rounded ">user</button>
+           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="4"  @click="dismisModal()"  class="rounded ">Posts</button>
+           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="5"  @click="dismisModal()"  class="rounded ">submit new post</button>
+           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="6"  @click="dismisModal()"  class="rounded ">personal messages</button>
+           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="7"  @click="dismisModal()"  class="rounded ">Groups</button>
+           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="8"  @click="dismisModal()"  class="rounded ">groupMessages</button>
+           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="9"  @click="dismisModal()"  class="rounded ">GroupMembers</button>
+           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="10" @click="dismisModal()"   class="rounded ">contact</button>
+           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="11" @click="dismisModal()"  class="rounded " >about Us </button>
 </div>
       </div>
       <div class="modal-footer">
@@ -85,5 +85,11 @@ import HomeView from './HomeView.vue';
         name:this.$store.state.name
       }
     },
+    methods:{
+      dismisModal(){
+        let clickEvent = new Event('click');
+        document.querySelector('.btn-close').dispatchEvent(clickEvent)
+      }
+    }
 }
 </script>
