@@ -23,10 +23,10 @@
            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="3"  @click="dismisModal()"  class="rounded ">user</button>
            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="4"  @click="dismisModal()"  class="rounded ">Posts</button>
            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="5"  @click="dismisModal()"  class="rounded ">submit new post</button>
-           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="6"  @click="dismisModal()"  class="rounded ">personal messages</button>
-           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="7"  @click="dismisModal()"  class="rounded ">Groups</button>
-           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="8"  @click="dismisModal()"  class="rounded ">groupMessages</button>
-           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="9"  @click="dismisModal()"  class="rounded ">GroupMembers</button>
+           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="6"  @click="dismisModal()"  class="rounded ">Images</button>
+           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="7"  @click="dismisModal()"  class="rounded ">Videos</button>
+           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="8"  @click="dismisModal()"  class="rounded ">Audio</button>
+           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="9"  @click="dismisModal()"  class="rounded ">Colours</button>
            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="10" @click="dismisModal()"   class="rounded ">contact</button>
            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="11" @click="dismisModal()"  class="rounded " >about Us </button>
 </div>

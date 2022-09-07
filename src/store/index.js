@@ -12,10 +12,15 @@ export default createStore({
     users: [],
     posts: [],
     allPosts: [],
+    allImages: [],
+    allVideos: [],
+    allAudios: [],
+    allColours: [],
     messages: [],
     groupMessages: [],
     name: "Terra Scientia",
-    loggedIN:false
+    loggedIN:false,
+    brokenLink:"https://images.unsplash.com/photo-1594322436404-5a0526db4d13?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8NDA0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
   },
   getters: {},
   mutations: {},

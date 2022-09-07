@@ -102,11 +102,8 @@ let id = JSON.parse(localStorage.getItem("user_id"))
 
       // localStorage.clear()
   // let user_id = localStorage.setItem("user_id", JSON.stringify(''));
-console.log('initialised')
-console.log(this.$store.state.loggedIN)
 },
 reading(){
-  console.log( document.querySelector('.carousel-item').classList )
               // setTimeout(this.sendUserData, 1000);
 
   // setTimeout(this.reading,1000)
