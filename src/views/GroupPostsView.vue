@@ -66,7 +66,7 @@
                     :key="post"
                     :id="'user' + user.id"
                   >
-                    <p>bo</p>
+                    <P>{{ post.message }}</P>
                   </div>
                   <div class="modal-footer">
                     <button
@@ -150,15 +150,22 @@ export default {
       let allUsers = this.$store.state.users;
       let i;
       let users = [];
+      let userPost = [];
+      let posts = this.$store.state.allPosts;
       let user_id = localStorage.toggledUser;
       for (i = 0; i < allUsers.length; i++) {
         if (allUsers[i].id != localStorage.user_id) {
           users.push(allUsers[i]);
         }
-        console.log(user_id);
+      }
+      let e;
+      for (e = 0; e < posts.length; e++) {
+        if (posts[e].userId == user_id) {
+          userPost.push(posts[e]);
+        }
       }
 
-      return users;
+      return userPost;
     },
   },
   data() {
