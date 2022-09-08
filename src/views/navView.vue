@@ -17,18 +17,18 @@
       </div>
       <div class="modal-body">
         <div id="nav">
-           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0"  @click="dismisModal()" class="active rounded " >home</button>
-           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1"  @click="dismisModal()"  class="rounded ">login</button>
-           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2"  @click="dismisModal()"  class="rounded ">register</button>
-           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="3"  @click="dismisModal()"  class="rounded ">user</button>
-           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="4"  @click="dismisModal()"  class="rounded ">Posts</button>
-           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="5"  @click="dismisModal()"  class="rounded ">submit new post</button>
-           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="6"  @click="dismisModal()"  class="rounded ">Images</button>
-           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="7"  @click="dismisModal()"  class="rounded ">Videos</button>
-           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="8"  @click="dismisModal()"  class="rounded ">Audio</button>
-           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="9"  @click="dismisModal()"  class="rounded ">Colours</button>
-           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="10" @click="dismisModal()"   class="rounded ">contact</button>
-           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="11" @click="dismisModal()"  class="rounded " >about Us </button>
+           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0"  @click="dismisModal()" class="active rounded clickable" >home</button>
+           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1"  @click="dismisModal()"  class="rounded clickable">login</button>
+           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2"  @click="dismisModal()"  class="rounded clickable">register</button>
+           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="3"  @click="dismisModal()"  class="rounded clickable">user</button>
+           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="4"  @click="dismisModal()"  class="rounded clickable">Posts</button>
+           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="5"  @click="dismisModal()"  class="rounded clickable">submit new post</button>
+           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="6"  @click="dismisModal()"  class="rounded clickable">Images</button>
+           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="7"  @click="dismisModal()"  class="rounded clickable">Videos</button>
+           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="8"  @click="dismisModal()"  class="rounded clickable">Audio</button>
+           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="9"  @click="dismisModal()"  class="rounded clickable">Colours</button>
+           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="10" @click="dismisModal()"   class="rounded clickable">contact</button>
+           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="11" @click="dismisModal()"  class="rounded clickable" >about Us </button>
 </div>
       </div>
       <div class="modal-footer">
@@ -56,9 +56,7 @@
 h1{
   color: var(--sixty);
 }
-h1:hover{
-  color: var(--thirty);
-}
+
 
 .modal-body{
   height: 80vh;

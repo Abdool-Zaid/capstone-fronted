@@ -28,7 +28,7 @@
               class="btn"
               data-bs-toggle="modal"
               :data-bs-target="'#modalNumber' + index"
-              @click="passId(user.id)"
+              @mouseover="passId(user.id)"
             >
               my posts
             </p>

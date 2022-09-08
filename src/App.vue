@@ -154,9 +154,13 @@ reading(){
   
   border: 5px solid var(--thirty);
 }
+.clickable{
+  color: var(--sixty) !important;
+  background-color: var(--ten) !important;
+}
 .clickable:hover{
-  border: 3px solid var(--thirty);
-  color: var(--thirty);
+  border: 3px solid var(--ten) !important;
+  color: var(--ten) !important;
 }
 
 #app {
