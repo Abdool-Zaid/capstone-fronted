@@ -65,7 +65,6 @@ export default {
             localStorage.setItem("profile", JSON.stringify(tokendata.decodedToken.user.profile));
             this.$store.state.profile.push(tokendata.decodedToken.user.profile);
             alert(`welcome ` +JSON.parse(localStorage.username))
-            window.location.reload()
           }
         });
            },
@@ -94,6 +93,7 @@ export default {
           }
         });
         this.VerifyUser()
+        //this.dismissmodal
     },
   },
 };
