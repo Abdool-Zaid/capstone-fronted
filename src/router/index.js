@@ -10,7 +10,7 @@ const routes = [
   {
     path: '/login',
     name: 'login',
-    component: () => import('../views/AboutView.vue')
+    component: () => import('../views/loginView.vue')
   },
   {
     path: '/register',
@@ -25,17 +25,17 @@ const routes = [
   {
     path: '/friendslist',
     name: 'friendslist',
-    component: () => import('../views/friendsListView.vue')
+    component: () => import('../views/aboutUsView.vue')
   },
   {
     path: '/messages',
     name: 'messages',
-    component: () => import('../views/MessagesView.vue')
+    component: () => import('../views/imagesView.vue')
   },
   {
     path: '/groups',
     name: 'groups',
-    component: () => import('../views/GroupsView.vue')
+    component: () => import('../views/videoView.vue')
   },
   {
     path: '/post',
@@ -45,17 +45,17 @@ const routes = [
   {
     path: '/groupMessages',
     name: 'groupMessages',
-    component: () => import('../views/GroupMessagesView.vue')
+    component: () => import('../views/audioView.vue')
   },
   {
     path: '/GroupMembers',
     name: 'GroupMembers',
-    component: () => import('../views/GroupMembersView.vue')
+    component: () => import('../views/textView.vue')
   },
   {
     path: '/GroupPosts',
     name: 'GroupPosts',
-    component: () => import('../views/GroupPostsView.vue')
+    component: () => import('../views/contactUsView.vue')
   },
   {
     path: '/Posts',

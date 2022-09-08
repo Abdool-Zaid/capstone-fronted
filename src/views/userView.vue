@@ -168,7 +168,6 @@ export default {
           id,
         {
           method: "PUT",
-
           headers: {
             "Content-Type": "application/json",
             "x-auth-token": JSON.parse(localStorage.token),
@@ -225,7 +224,7 @@ img {
 width: 45vw;
 }
 #userPosts {
-  border:2px dashed var(--ten);
+  border:2px dashed var(--thirty);
   max-width: 45vw;
   bottom: 0;
   left: 0;

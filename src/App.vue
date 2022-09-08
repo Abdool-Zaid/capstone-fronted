@@ -21,7 +21,6 @@
       </div>
       <div class="carousel-item">
     <h1>new post page</h1>
-
         <PostView />
       </div>
       <div class="carousel-item">
@@ -66,23 +65,25 @@
       />
     </button> -->
   </div>
+  <Footer></Footer>
 </template>
 // import home from '@/views/HomeView.vue' // import nav from
 '@/components/nav.vue'
 <script>
 import HomeView from "../src/views/HomeView.vue";
 import NAvBAr from "../src/views/navView.vue";
-import login from "../src/views/AboutView.vue";
+import login from "./views/loginView.vue";
 import register from "../src/views/RegisterView.vue";
 import UserView from "./views/userView.vue";
 import PostsView from "./views/PostsView.vue";
 import PostView from "./views/PostView.vue";
-import MessagesView from "./views/MessagesView.vue";
-import GroupsView from "./views/GroupsView.vue";
-import GroupMessagesView from "./views/GroupMessagesView.vue";
-import GroupMembersView from "./views/GroupMembersView.vue";
-import FriendsListView from "./views/friendsListView.vue";
-import GroupPostsView from "./views/GroupPostsView.vue";
+import MessagesView from "./views/imagesView.vue";
+import GroupsView from "./views/videoView.vue";
+import GroupMessagesView from "./views/audioView.vue";
+import GroupMembersView from "./views/textView.vue";
+import FriendsListView from "./views/aboutUsView.vue";
+import GroupPostsView from "./views/contactUsView.vue";
+import Footer from "./components/footer.vue";
 export default {
   mounted(){
 this.initialised()
@@ -123,7 +124,8 @@ reading(){
     GroupMembersView,
     FriendsListView,
     GroupPostsView,
-  },
+    Footer
+},
 };
 </script>
 
@@ -144,19 +146,18 @@ reading(){
 :root{
   --ss:1%;
   --sm:1em;
---bg:#a9fba2;
+--bg:#a9fba247;
 --sixty:#0081e5;
---thirty:#b94100e1;
---ten:#844e98;
+--thirty:#844e98;
+--ten:#b94100e1;
 --chesthair:#00000000;
 }
 .divBorder{
   
-  border: 5px solid var(--thirty);
+  border: 5px solid var(--ten);
 }
 .clickable{
-  color: var(--sixty) !important;
-  background-color: var(--ten) !important;
+  color: var(--thirty) !important;
 }
 .clickable:hover{
   border: 3px solid var(--ten) !important;

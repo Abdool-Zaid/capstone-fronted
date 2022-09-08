@@ -1,8 +1,8 @@
 <template>
   <button type="button" class="btn homeButton rounded-pill" data-bs-toggle="modal" data-bs-target="#navModal">
       <div id="navbar"  class="d-flex justify-content-around">
-    <h1>{{name}}</h1>
-      <h1>
+    <h1 class="clickable">{{name}}</h1>
+      <h1 class="clickable">
         &#9778;
       </h1>
     </div>
@@ -26,7 +26,7 @@
            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="6"  @click="dismisModal()"  class="rounded clickable">Images</button>
            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="7"  @click="dismisModal()"  class="rounded clickable">Videos</button>
            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="8"  @click="dismisModal()"  class="rounded clickable">Audio</button>
-           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="9"  @click="dismisModal()"  class="rounded clickable">Colours</button>
+           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="9"  @click="dismisModal()"  class="rounded clickable">text</button>
            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="10" @click="dismisModal()"   class="rounded clickable">contact</button>
            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="11" @click="dismisModal()"  class="rounded clickable" >about Us </button>
 </div>
@@ -49,7 +49,7 @@
   margin-right:var(--ss) ;
   width: 98vw;
   border-color: var(--ten);
-  background-color: var(--ten);
+  background-color: var(--sixty);
   z-index: 10;
   position: fixed;
 }
@@ -77,11 +77,9 @@ width: 100%;
 }
 
 .rounded{
-  margin:var(--ss);
-  padding:var(--ss);
-background-color: var(--thirty);
+padding:var(--ss);
+background-color: var(--sixty);
 border-color: var(--chesthair);  
-color: white;
 }
 </style>
 <script>
