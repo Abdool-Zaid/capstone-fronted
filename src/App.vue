@@ -148,7 +148,8 @@ reading(){
   --sm:1em;
 --bg:#a9fba247;
 --sixty:#0081e5;
---thirty:#844e98;
+--thirty:#e3368c;
+/* --thirty:#844e98; */
 --ten:#b94100e1;
 --chesthair:#00000000;
 }
