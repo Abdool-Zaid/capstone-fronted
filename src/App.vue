@@ -98,7 +98,7 @@ let id = JSON.parse(localStorage.getItem("user_id"))
   ?JSON.parse(localStorage.getItem("isLoggedIN"))
   :localStorage.setItem('isLoggedIN', JSON.stringify(false));
 
-  this.$store.state.loggedIN=JSON.parse(localStorage.loggedIN)
+  this.$store.state.loggedIN=JSON.parse(localStorage.isLoggedIN)
 
       // localStorage.clear()
   // let user_id = localStorage.setItem("user_id", JSON.stringify(''));
@@ -153,6 +153,10 @@ reading(){
 .divBorder{
   
   border: 5px solid var(--thirty);
+}
+.clickable:hover{
+  border: 3px solid var(--thirty);
+  color: var(--thirty);
 }
 
 #app {
