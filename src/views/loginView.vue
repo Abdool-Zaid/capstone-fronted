@@ -94,6 +94,9 @@ export default {
         });
         this.VerifyUser()
         //this.dismissmodal
+        
+        let clickEvent = new Event('click');
+        document.querySelector('.btn-primary').dispatchEvent(clickEvent)
     },
   },
 };
