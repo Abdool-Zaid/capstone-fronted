@@ -1,11 +1,10 @@
 <template>
   <div class="AllPosts">
     <h1>about us</h1>
-    <h2>our misssion</h2>
+    <h2><span class="material-icons"> sensors </span>our misssion</h2>
     <p>we are small team that believes in the democratisation of information</p>
-    <h3><span class="material-icons">
-sensors
-</span>usage</h3>
+    <p>to this end we built this site for those of simillar beliefs</p>
+    <h3>usage</h3>
     <p></p>
     <h4>&#9732; general commands:</h4>
     <h5>post an image</h5>
@@ -26,7 +25,7 @@ sensors
       start your message with the following command
       <code>!audio</code>
     </p>
-    <h6></h6>
+    <h6>&#9939;</h6>
     <p></p>
   </div>
 </template>
@@ -66,5 +65,8 @@ h5 {
 h6 {
   width: fit-content;
   border-bottom: 5px var(--sixty) double;
+}
+span {
+  background-color: var(--chesthair);
 }
 </style>

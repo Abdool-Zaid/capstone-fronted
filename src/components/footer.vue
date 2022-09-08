@@ -21,6 +21,7 @@
   
   <style scoped>
   #footer{
+    z-index: -10;
     width: 100vw;
     position: fixed;
     margin-top: var(--ss);

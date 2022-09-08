@@ -10,7 +10,7 @@
       />
       <H1>welcome {{ username }}</H1>
       <p>BIO: {{ intro }}</p>
-      <!-- <button class="btn homeButton" @click="logOUT()">log out</button> -->
+      <button class="btn homeButton" @click="logOUT()">log out</button>
     </div>
     <div class="extraControlls d-flex justify-content-between">
 
@@ -146,7 +146,8 @@ export default {
   methods: {
     // https://tubular-malasada-d6c6b7.netlify.app/.netlify/functions/api/users/
     sendUserData() {
-      (this.$store.state.id[0] = JSON.parse(localStorage.user_id)),
+      try {
+        (this.$store.state.id[0] = JSON.parse(localStorage.user_id)),
         (this.$store.state.username[0] = JSON.parse(localStorage.username)),
         (this.$store.state.intro[0] = JSON.parse(localStorage.intro)),
         (this.$store.state.profile[0] = JSON.parse(localStorage.profile));
@@ -156,7 +157,24 @@ export default {
       //   this.profile;
       //   this.intro;
       // }, 1000);
-    },
+      
+      } catch (error) {
+        if(error){
+
+          (this.$store.state.id[0] ='29' ),
+          (this.$store.state.username[0] ='default user' ),
+          (this.$store.state.intro[0] = 'please login to see your acount'),
+          (this.$store.state.profile[0] ='https://images.unsplash.com/photo-1555677284-6a6f971638e0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80');
+          // console.log('set')
+          // setTimeout(function(){
+            //   this.username;
+            //   this.profile;
+            //   this.intro;
+            // }, 1000);
+            
+          }
+      }
+      },
     logOUT() {
       alert("till next time " + JSON.parse(localStorage.username));
       localStorage.clear();

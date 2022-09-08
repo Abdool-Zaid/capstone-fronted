@@ -55,6 +55,7 @@ export default {
           if (tokendata.error) {
             alert(tokendata.error);
           } else {
+            alert('logging you in...')
             localStorage.setItem("user_id", JSON.stringify(tokendata.decodedToken.user.id));
             this.$store.state.id.push(tokendata.decodedToken.user.id);
             localStorage.setItem("username", JSON.stringify(tokendata.decodedToken.user.username));
@@ -64,6 +65,7 @@ export default {
             localStorage.setItem("profile", JSON.stringify(tokendata.decodedToken.user.profile));
             this.$store.state.profile.push(tokendata.decodedToken.user.profile);
             alert(`welcome ` +JSON.parse(localStorage.username))
+            window.location.reload()
           }
         });
            },

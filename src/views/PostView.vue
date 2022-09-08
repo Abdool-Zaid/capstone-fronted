@@ -44,6 +44,7 @@ export default {
             alert(returnData.error);
           } else {
             alert(returnData.msg)
+            window.location.reload()
           }
         });
     },
