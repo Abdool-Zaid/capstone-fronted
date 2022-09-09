@@ -1,12 +1,25 @@
 <template>
   <div class="AllPosts">
-    <h1>contact us</h1>
+    <h1>reach out</h1>
     <div id="pageSplitter" class="d-flex">
       <div id="controllers">
-        <input type="text" placeholder="search controller" />
-        <div>
-          <p>carousel controlling carousel</p>
-        </div>
+        <h2>contact us</h2>
+        <h6>our socials</h6>
+        <h6>message us</h6>
+        <form name="contact" netlify>
+  <p>
+    <label>Name <input type="text" name="name" placeholder="name" /></label>
+  </p>
+  <p>
+    <label>Email <input type="email" name="email" placeholder="email" /></label>
+  </p>
+  <p>
+    <label>message <input type="text" name="message" placeholder="message" /></label>
+  </p>
+  <p>
+    <button type="submit">Send</button>
+  </p>
+</form>
       </div>
       <div id="emoters">
         <div
@@ -119,6 +132,10 @@ img {
   display: flex;
   height: 72vh;
   overflow: scroll;
+}
+h6{
+  width: 100%;
+  border-bottom: 5px var(--bg) double;
 }
 </style>
 

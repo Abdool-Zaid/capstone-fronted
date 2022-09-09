@@ -99,5 +99,5 @@ import HomeView from './HomeView.vue';
         document.querySelector('.btn-close').dispatchEvent(clickEvent)
       }
     }
-}
+  }
 </script>
