@@ -1,26 +1,31 @@
 <template>
   <NAvBAr />
-  <div id="mainCarousel" class="carousel  slide" data-bs-ride="false" data-bs-touch="true">
+  <div
+    id="mainCarousel"
+    class="carousel slide"
+    data-bs-ride="false"
+    data-bs-touch="true"
+  >
     <div class="carousel-inner">
       <div class="carousel-item active">
         <HomeView />
       </div>
-      <div class="carousel-item ">
+      <div class="carousel-item">
         <login />
       </div>
       <!--  -->
       <div class="carousel-item">
         <register />
       </div>
-        <div class="carousel-item">
-          <div class="show"></div> 
-          <UserView />
-        </div>
+      <div class="carousel-item">
+        <div class="show"></div>
+        <UserView />
+      </div>
       <div class="carousel-item">
         <PostsView />
       </div>
       <div class="carousel-item">
-    <h1>new post page</h1>
+        <h1>new post page</h1>
         <PostView />
       </div>
       <div class="carousel-item">
@@ -85,30 +90,28 @@ import FriendsListView from "./views/aboutUsView.vue";
 import GroupPostsView from "./views/contactUsView.vue";
 import Footer from "./components/footer.vue";
 export default {
-  mounted(){
-this.initialised()
-this.reading()
+  mounted() {
+    this.initialised();
+    this.reading();
   },
-  methods:{
-    initialised(){
-      
-let id = JSON.parse(localStorage.getItem("user_id"))
-  ? JSON.parse(localStorage.getItem("user_id"))
-  :localStorage.getItem("user_id", JSON.stringify(2));
-  let loggedIN=JSON.parse(localStorage.getItem("isLoggedIN"))
-  ?JSON.parse(localStorage.getItem("isLoggedIN"))
-  :localStorage.setItem('isLoggedIN', JSON.stringify(false));
+  methods: {
+    initialised() {
+      let id = JSON.parse(localStorage.getItem("user_id"))
+        ? JSON.parse(localStorage.getItem("user_id"))
+        : localStorage.getItem("user_id", JSON.stringify(2));
+      let loggedIN = JSON.parse(localStorage.getItem("isLoggedIN"))
+        ? JSON.parse(localStorage.getItem("isLoggedIN"))
+        : localStorage.setItem("isLoggedIN", JSON.stringify(false));
 
-  this.$store.state.loggedIN=JSON.parse(localStorage.isLoggedIN)
+      this.$store.state.loggedIN = JSON.parse(localStorage.isLoggedIN);
 
       // localStorage.clear()
-  // let user_id = localStorage.setItem("user_id", JSON.stringify(''));
-},
-reading(){
-              // setTimeout(this.sendUserData, 1000);
-
-  // setTimeout(this.reading,1000)
-}
+      // let user_id = localStorage.setItem("user_id", JSON.stringify(''));
+    },
+    reading() {
+      // setTimeout(this.sendUserData, 1000);
+      // setTimeout(this.reading,1000)
+    },
   },
   components: {
     HomeView,
@@ -124,43 +127,42 @@ reading(){
     GroupMembersView,
     FriendsListView,
     GroupPostsView,
-    Footer
-},
+    Footer,
+  },
 };
 </script>
 
 <style>
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Literata", serif;
+ 
 }
-.carousel-item :first-child{
-  margin-top:2em ;
+.carousel-item :first-child {
+  margin-top: 2em;
 }
 ::-webkit-scrollbar {
-        display: none;
-      }
-:root{
-  --ss:1%;
-  --sm:1em;
---bg:#a9fba247;
---sixty:#0081e5;
---thirty:#e3368c;
-/* --thirty:#844e98; */
---ten:#b94100e1;
---chesthair:#00000000;
+  display: none;
 }
-.divBorder{
-  
+:root {
+  --ss: 1%;
+  --sm: 1em;
+  --bg: #a9fba247;
+  --sixty: #0081e5;
+  --thirty: #e3368c;
+  /* --thirty:#844e98; */
+  --ten: #b94100e1;
+  --chesthair: #00000000;
+}
+.divBorder {
   border: 5px solid var(--ten);
 }
-.clickable{
+.clickable {
   color: var(--thirty) !important;
 }
-.clickable:hover{
+.clickable:hover {
   border: 3px solid var(--ten) !important;
   color: var(--ten) !important;
 }
@@ -170,7 +172,7 @@ reading(){
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color:var(--sixty);
+  color: var(--sixty);
 }
 
 nav {

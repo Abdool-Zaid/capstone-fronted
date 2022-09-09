@@ -13,7 +13,13 @@
           <P>{{ post.userId }}</P>
           <p>{{ post.message }}</p>
           <img :src="post.message" />
-          <iframe
+          <audio controls  allow="autoplay"
+>
+  <!-- <source :src="post.message" type="audio/ogg"> -->
+  <source :src="post.message" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+          <!-- <iframe
             width="100%"
             height="300"
             scrolling="no"
@@ -42,7 +48,7 @@
               style="color: #cccccc; text-decoration: none"
               >Black Hole Sonification: Perseus</a
             >
-          </div>
+          </div> -->
         </div>
       </div>
     </div>

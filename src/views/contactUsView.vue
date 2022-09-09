@@ -5,27 +5,37 @@
       <div id="controllers">
         <h2>contact us</h2>
         <h6>our socials</h6>
+        <div id="contactButtons">
+      <a href="mailto:aztoorabally7447@gmail.com" target="_blank" rel="noopener noreferrer"> &#9993;</a>
+      <a href="https://www.linkedin.com/in/abdool-zaid-toorabally-004921237/" target="_blank" rel="noopener noreferrer">
+        <img src="https://raw.githubusercontent.com/Abdool-Zaid/vuePortfolio/main/src/assets/LinkedIn-Logos/LinkedIn-Logos/LI-In-Bug.png" alt="linkedin" class="contactLogo">
+      </a>
+      <a href="tel:+27621213907" rel="noopener noreferrer">&#9742;</a>
+      </div>
         <h6>message us</h6>
-        <form name="contact" method="POST" data-netlify="true" netlify>
-          <p>
-            <label
-              >Name <input type="text" name="name" placeholder="name"
-            /></label>
-          </p>
-          <p>
-            <label
-              >Email <input type="email" name="email" placeholder="email"
-            /></label>
-          </p>
-          <p>
-            <label
-              >message <input type="text" name="message" placeholder="message"
-            /></label>
-          </p>
-          <p>
-            <button type="submit">Send</button>
-          </p>
-        </form>
+        <form action="https://formspree.io/f/xlevgook" method="POST" class="d-flex row justify-content-center">
+            <input type="name" name="name"  required  placeholder="Name"/>
+      <input type="email" name="email"  required  placeholder="Email"/>
+      <input type="company" name="company"  required  placeholder="Company"/>
+      <textarea name="message" required placeholder="Message"></textarea>
+      <textarea name="conatact" placeholder="Optional contact information"></textarea>
+        <button type="submit" class="clickable">send message &#8658;</button>
+     
+    </form>
+        <!-- <form name="contact"   action="/thanks-page" method="POST"  data-netlify="true" netlify>
+  <p>
+    <label>Name <input type="text" name="name" placeholder="name" /></label>
+  </p>
+  <p>
+    <label>Email <input type="email" name="email" placeholder="email" /></label>
+  </p>
+  <p>
+    <label>message <input type="text" name="message" placeholder="message" /></label>
+  </p>
+  <p>
+    <button type="submit">Send</button>
+  </p>
+</form> -->
       </div>
       <div id="emoters">
         <div
@@ -139,9 +149,22 @@ img {
   height: 72vh;
   overflow: scroll;
 }
-h6 {
+h6{
   width: 100%;
+  margin: var(--sm);
   border-bottom: 5px var(--bg) double;
+}
+#contactButtons > *{
+  margin: var(--sm);
+  width: var(--sm);
+  height:var(--sm);
+}
+.contactLogo{
+  width: var(--sm);
+  height:var(--sm);
+}
+form > *{
+  margin: var(--ss);
 }
 </style>
 
@@ -183,7 +206,7 @@ export default {
       }
       let e;
       for (e = 0; e < posts.length; e++) {
-        if (posts[e].userId == user_id && posts[e].userId == 29) {
+        if (posts[e].userId == user_id && posts[e].userId == 29){
           userPost.push(posts[e]);
         }
       }
@@ -233,7 +256,7 @@ export default {
       // }, 1000);
     },
     passId(id) {
-      this.users;
+      this.users
       localStorage.setItem("toggledUser", JSON.stringify(id));
     },
   },
