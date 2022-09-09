@@ -6,20 +6,26 @@
         <h2>contact us</h2>
         <h6>our socials</h6>
         <h6>message us</h6>
-        <form name="contact"   action="/thanks-page" method="POST"  data-netlify="true" netlify>
-  <p>
-    <label>Name <input type="text" name="name" placeholder="name" /></label>
-  </p>
-  <p>
-    <label>Email <input type="email" name="email" placeholder="email" /></label>
-  </p>
-  <p>
-    <label>message <input type="text" name="message" placeholder="message" /></label>
-  </p>
-  <p>
-    <button type="submit">Send</button>
-  </p>
-</form>
+        <form name="contact" method="POST" data-netlify="true" netlify>
+          <p>
+            <label
+              >Name <input type="text" name="name" placeholder="name"
+            /></label>
+          </p>
+          <p>
+            <label
+              >Email <input type="email" name="email" placeholder="email"
+            /></label>
+          </p>
+          <p>
+            <label
+              >message <input type="text" name="message" placeholder="message"
+            /></label>
+          </p>
+          <p>
+            <button type="submit">Send</button>
+          </p>
+        </form>
       </div>
       <div id="emoters">
         <div
@@ -133,7 +139,7 @@ img {
   height: 72vh;
   overflow: scroll;
 }
-h6{
+h6 {
   width: 100%;
   border-bottom: 5px var(--bg) double;
 }
@@ -177,7 +183,7 @@ export default {
       }
       let e;
       for (e = 0; e < posts.length; e++) {
-        if (posts[e].userId == user_id && posts[e].userId == 29){
+        if (posts[e].userId == user_id && posts[e].userId == 29) {
           userPost.push(posts[e]);
         }
       }
@@ -227,7 +233,7 @@ export default {
       // }, 1000);
     },
     passId(id) {
-      this.users
+      this.users;
       localStorage.setItem("toggledUser", JSON.stringify(id));
     },
   },
