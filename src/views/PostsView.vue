@@ -1,3 +1,5 @@
+import {toRaw} from 'vue'
+
 <template>
   <div class="AllPosts">
     <h1>all posts page</h1>
@@ -34,6 +36,8 @@ bottom: 0;
 
 </style>
 <script>
+  import { toRaw } from "@vue/reactivity";
+
 import PostView from './PostView.vue';
 export default {
     mounted() {
@@ -52,8 +56,10 @@ export default {
         sendUserData() {
             fetch("https://tubular-malasada-d6c6b7.netlify.app/.netlify/functions/api/userPost", {
                 method: "GET",
+
                 headers: {
                   "Content-Type": "application/json",
+                  'mode':'no-cors',
                 },
               })
                 .then((res) => res.json())
@@ -78,17 +84,24 @@ export default {
             // }, 1000);
         },
         overloop(id){
-          let holder= document.querySelector("#"+id ).innerHTML
-          let obj=document.querySelector('.posterName')
+          let holder= document.querySelector("#"+id )
+          let obj=document.querySelectorAll('.posterName')
           let users= this.$store.state.users
+          let user= []
+          // let arr= toRaw(user)
           let i ;
+          let u;
           for(i=0;i<users.length;i++){
-if(holder==users[i].id){
+            if(holder.innerHTML==users[i].id){
+  user.push(users[i])
+  console.log(holder.innerHTML)
+  console.log(toRaw(user[0]) )
+};
+// for(u=0;u<obj.length;u++){
+  // obj[u].innerHTML=user[i]
+// }
 
-  console.log(users[i].username)
 }
-}
-// console.log(users)
         },
     },
     components: { PostView }
