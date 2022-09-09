@@ -5,7 +5,7 @@
       <div  v-for="post in Posts" :key="post" class="d-flex justify-content-center"  aria-live="assertive" >
         <div class="postCard rounded-pill" >
           <h6 class="d-none">{{post.id}}</h6>
-          <P>{{ post.userId }}</P>
+          <P class="posterName" @click="overloop('mlem'+post.id)" :id="'mlem'+post.id">{{ post.userId }}</P>
           <P>{{ post.message }}</P>
         </div>
       </div>
@@ -38,6 +38,7 @@ import PostView from './PostView.vue';
 export default {
     mounted() {
         this.sendUserData();
+        // this.overloop();
     },
     computed: {
         Posts() {
@@ -76,62 +77,19 @@ export default {
             //     this.Posts;
             // }, 1000);
         },
-        searchPlanet(){
-  let SearchTerm= document.querySelector('#searchInput').value.toLowerCase();
-  if(SearchTerm==''){
-    alert(`enter a planet's name`)
-  }
-  else{
-    document.querySelector('#target').innerHTML='';
-    let item = listing.find(o => o.name.toLowerCase()=== SearchTerm)
-    
-    document.querySelector('#target').innerHTML=` <div id="empty">
-    <h1>No Planet found</h1>
-    </div>`;
-    
-    document.querySelector('#target').innerHTML=`
-    <div class="Item"  onclick='BuyNow()'  >
-    <img src="${item.image}"  alt="PLanet IMage">  
-    <h1>${item.name}</h1>
-    <h4 dir="rtl">atmospheric conditions: ${item.atmosphere}</h4>
-    <p class="subInfo" dir="rtl">Moons: ${item.moons}</p>
-    <p class="subInfo" dir="rtl">Weather: ${item.tempRange}</p>
-    <p class="subInfo" dir="rtl"> water: ${item.water}</p>
-    <p class="subInfo" dir="rtl"> Size: ${item.size}</p>
-    <p class="subInfo" dir="rtl" class='pop'> population: ${item.population}</p>
-    <p class="subInfo" dir="rtl"> JWT: ${item.price}</p>
-    <img src="${item.populationURL}" alt="No lifeforms known">
-    </div>
-    `;
+        overloop(id){
+          let holder= document.querySelector("#"+id ).innerHTML
+          let obj=document.querySelector('.posterName')
+          let users= this.$store.state.users
+          let i ;
+          for(i=0;i<users.length;i++){
+if(holder==users[i].id){
 
-  }
-},
-FilterPlanets(){
-    let FilterOption= document.querySelector('#filter').value
-    if(FilterOption!=='all'){
-
-        document.querySelector('#target').innerHTML='';
-            let specificView= listing.filter(Planet => Planet.tempRange == FilterOption);
-        specificView.forEach((Planet)=>{
-
-            document.querySelector('#target').innerHTML+=`
-            <div class="Item"  onclick='BuyNow()'  >
-            <img src="${Planet.image}"  alt="PLanet IMage">  
-            <h1>${Planet.name}</h1>
-            <h4 dir="rtl">atmospheric conditions: ${Planet.atmosphere}</h4>
-    <p class="subInfo" dir="rtl">Moons: ${Planet.moons}</p>
-    <p class="subInfo" dir="rtl">Weather: ${Planet.tempRange}</p>
-    <p class="subInfo" dir="rtl"> water: ${Planet.water}</p>
-    <p class="subInfo" dir="rtl"> Size: ${Planet.size}</p>
-    <p class="subInfo" dir="rtl" class='pop'> population: ${Planet.population}</p>
-    <p class="subInfo" dir="rtl"> JWT: ${Planet.price}</p>
-    <img src="${Planet.populationURL}" alt="No lifeforms known">
-    
-    </div>
-    `;   
-    
-}); 
-    }}
+  console.log(users[i].username)
+}
+}
+// console.log(users)
+        },
     },
     components: { PostView }
 };
