@@ -11,12 +11,15 @@
         <div class="postCard rounded-pill">
           <h6 class="d-none">{{ post.id }}</h6>
           <P>{{ post.userId }}</P>
-          <p>{{post.message}}</p>
-          <img :src="post.message" >
-          <iframe :src="post.message" class="embed-responsive-item" id="ytplayer" type="text/html" width="640" height="360" 
-      frameborder="0" allowfullscreen ></iframe>
-          <video width="320" height="240" controls  :alt="'images posted by ' +post.userId"  :id="'video'+post.id">
-            <source :src="post.message" ></video>
+          <iframe
+            width="560"
+            height="315"
+            :src="post.message"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
         </div>
       </div>
     </div>
@@ -55,16 +58,15 @@ export default {
       return this.$store.state.user;
     },
   },
-  data(){
-    return{
-      brokenLink:this.$store.state.brokenLink
-    }
+  data() {
+    return {
+      brokenLink: this.$store.state.brokenLink,
+    };
   },
   methods: {
-    brokenLink(id){
-      console.trace()
-        // document.getElementById(id).classList
-      
+    brokenLink(id) {
+      console.trace();
+      // document.getElementById(id).classList
     },
     sendUserData() {
       fetch(

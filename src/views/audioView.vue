@@ -11,12 +11,38 @@
         <div class="postCard rounded-pill">
           <h6 class="d-none">{{ post.id }}</h6>
           <P>{{ post.userId }}</P>
-          <p>{{post.message}}</p>
-          <img :src="post.message" >
-          <iframe :src="post.message" class="embed-responsive-item" id="ytplayer" type="text/html" width="640" height="360" 
-      frameborder="0" allowfullscreen ></iframe>
-          <video width="320" height="240" controls  :alt="'images posted by ' +post.userId"  :id="'video'+post.id">
-            <source :src="post.message" ></video>
+          <p>{{ post.message }}</p>
+          <img :src="post.message" />
+          <iframe
+            width="100%"
+            height="300"
+            scrolling="no"
+            frameborder="no"
+            allow="autoplay"
+            :src="post.message"           ></iframe>
+          <div
+            style="
+              font-size: 10px;
+              color: #cccccc;
+              line-break: anywhere;
+              word-break: normal;
+              overflow: hidden;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+              font-family: Interstate, Lucida Grande, Lucida Sans Unicode,
+                Lucida Sans, Garuda, Verdana, Tahoma, sans-serif;
+              font-weight: 100;
+            "
+          >
+         
+            <a
+              :href="post.message"
+              title="Black Hole Sonification: Perseus"
+              target="_blank"
+              style="color: #cccccc; text-decoration: none"
+              >Black Hole Sonification: Perseus</a
+            >
+          </div>
         </div>
       </div>
     </div>
@@ -55,16 +81,15 @@ export default {
       return this.$store.state.user;
     },
   },
-  data(){
-    return{
-      brokenLink:this.$store.state.brokenLink
-    }
+  data() {
+    return {
+      brokenLink: this.$store.state.brokenLink,
+    };
   },
   methods: {
-    brokenLink(id){
-      console.trace()
-        // document.getElementById(id).classList
-      
+    brokenLink(id) {
+      console.trace();
+      // document.getElementById(id).classList
     },
     sendUserData() {
       fetch(

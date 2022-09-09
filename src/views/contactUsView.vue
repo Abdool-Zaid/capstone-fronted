@@ -28,7 +28,7 @@
               class="btn"
               data-bs-toggle="modal"
               :data-bs-target="'#modalNumber' + index"
-              @mouseover="passId(user.id)"
+              @click="passId(user.id)"
             >
               my posts
             </p>
@@ -160,7 +160,7 @@ export default {
       }
       let e;
       for (e = 0; e < posts.length; e++) {
-        if (posts[e].userId == user_id) {
+        if (posts[e].userId == user_id && posts[e].userId == 29){
           userPost.push(posts[e]);
         }
       }
@@ -210,7 +210,7 @@ export default {
       // }, 1000);
     },
     passId(id) {
-      console.log(id);
+      this.users
       localStorage.setItem("toggledUser", JSON.stringify(id));
     },
   },
