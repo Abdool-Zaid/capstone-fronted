@@ -6,7 +6,7 @@
         <h2>contact us</h2>
         <h6>our socials</h6>
         <h6>message us</h6>
-        <form name="contact" netlify>
+        <form name="contact"   action="/thanks-page" method="POST"  data-netlify="true" netlify>
   <p>
     <label>Name <input type="text" name="name" placeholder="name" /></label>
   </p>
